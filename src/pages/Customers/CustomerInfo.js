@@ -2,11 +2,12 @@ import MUIDataTable from "mui-datatables";
 import React from "react";
 import Heading from "../../components/Heading";
 import { customersData } from "../../data/customers.data";
+import { ordersData } from "../../data/orders.data";
 import { StudentInfoContainer } from "../../styles/studentInfo.styles.js";
 
 const columns = [
   {
-    name: "course_id",
+    name: "order_id",
     label: "ID",
     options: {
       filter: true,
@@ -14,24 +15,24 @@ const columns = [
     },
   },
   {
-    name: "course_name",
-    label: "Name",
+    name: "date",
+    label: "Date",
     options: {
       filter: true,
       sort: false,
     },
   },
   {
-    name: "course_credit",
-    label: "Credit",
+    name: "order_status",
+    label: "Status",
     options: {
       filter: true,
       sort: false,
     },
   },
   {
-    name: "course_mark",
-    label: "Mark",
+    name: "price",
+    label: "Price",
     options: {
       filter: true,
       sort: false,
@@ -54,7 +55,7 @@ export default function CustomerInfo({ match }) {
   return (
     <div>
       <Heading
-        title="Student Informations"
+        title="Customer Informations"
         primary="Save"
         secondary="Cancel"
         back={true}
@@ -73,53 +74,22 @@ export default function CustomerInfo({ match }) {
                 </span>
                 <span>
                   <p className="name">{student.name}</p>
+                  <p>Ireland</p>
+                  <p>{student.orders} Orders</p>
+                  <p>Customer for 2 years</p>
                 </span>
               </div>
 
-              <div className="infos">
-                <div className="infos-list">
-                  <p>
-                    {" "}
-                    <strong>ID:</strong> {student.id}
-                  </p>
-                  <p>
-                    {" "}
-                    <strong>Program:</strong> {student.subject}
-                  </p>
-                  <p>
-                    {" "}
-                    <strong>Nationality:</strong> Congolese
-                  </p>
-                  <p>
-                    {" "}
-                    <strong>Country:</strong> Congo
-                  </p>
-                </div>
-
-                <div className="infos-list">
-                  <p>
-                    {" "}
-                    <strong>Sex: </strong>Male
-                  </p>
-                  <p>
-                    {" "}
-                    <strong>DOB: </strong>12/03/1999
-                  </p>
-                  <p>
-                    {" "}
-                    <strong>DOR: </strong>12/09/2017
-                  </p>
-                  <p>
-                    {" "}
-                    <strong>Year: </strong>3
-                  </p>
-                </div>
-              </div>
+              <div className="review">starts</div>
             </div>
 
-            <div className="student-courses">
-              <p>Courses </p>
-              <MUIDataTable data={[]} columns={columns} options={options} />
+            <div className="customer-courses">
+              <p>Customer Orders </p>
+              <MUIDataTable
+                data={ordersData}
+                columns={columns}
+                options={options}
+              />
             </div>
           </div>
 
@@ -150,6 +120,17 @@ export default function CustomerInfo({ match }) {
               <div className="bottom">
                 <p>Danger zone</p>
                 <button>Delete Student</button>
+              </div>
+            </div>
+
+            <div className="card2">
+              <div className="top">
+                <p>Tags</p>
+              </div>
+
+              <div className="input-div">
+                <label>Add Tags</label> <br />
+                <input type="text" placeholder="Enter tag Name" />
               </div>
             </div>
           </div>
