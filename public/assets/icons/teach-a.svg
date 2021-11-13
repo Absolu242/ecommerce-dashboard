@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="24px" height="24px" viewbox="0 0 24 24" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <g id="icngeneralcalendar">
+    <g id="icnsettingsconnectedappsinactive">
+      <path d="M0 0L24 0L24 24L0 24L0 0Z" id="container" fill="none" fill-rule="evenodd" stroke="none" />
+      <path d="M11 0C8.23858 0 6 2.23858 6 5C6 7.76142 8.23858 10 11 10C13.7614 10 16 7.76142 16 5C16 2.23858 13.7614 0 11 0ZM11 2C12.6569 2 14 3.34315 14 5C14 6.65685 12.6569 8 11 8C9.34315 8 8 6.65685 8 5C8 3.34315 9.34315 2 11 2ZM5 10C2.23858 10 0 12.2386 0 15C0 17.7614 2.23858 20 5 20C7.76142 20 10 17.7614 10 15C10 12.2386 7.76142 10 5 10ZM17 10C14.2386 10 12 12.2386 12 15C12 17.7614 14.2386 20 17 20C19.7614 20 22 17.7614 22 15C22 12.2386 19.7614 10 17 10ZM5 12C6.65685 12 8 13.3431 8 15C8 16.6569 6.65685 18 5 18C3.34315 18 2 16.6569 2 15C2 13.3431 3.34315 12 5 12ZM17 12C18.6569 12 20 13.3431 20 15C20 16.6569 18.6569 18 17 18C15.3431 18 14 16.6569 14 15C14 13.3431 15.3431 12 17 12Z" transform="translate(1 2)" id="apps" fill="#3F8CFF" fill-rule="evenodd" stroke="none" />
+    </g>
+  </g>
+</svg>

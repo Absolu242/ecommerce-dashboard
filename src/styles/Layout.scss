@@ -1,0 +1,25 @@
+
+
+.grid-container{
+  width: 100%;
+  position: relative;
+}
+.grid-main {
+  position: relative;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 255px 1fr;
+  gap: 10px;
+  min-height: 100vh;
+  padding-top: 5rem;
+
+}
+
+
+
+.grid-main-content {
+  position: relative;
+ grid-column-start: 2;
+  width: 100%;
+  padding:4.5rem 3rem;
+}
