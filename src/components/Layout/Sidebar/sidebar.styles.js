@@ -25,13 +25,13 @@ export const SidebarContainer = styled.div`
     width: 2px;
   }
 
-  &::-webkit-scrollbar-track {
+  /* &::-webkit-scrollbar-track {
     background-color: #d9e1ec;
   }
 
   &::-webkit-scrollbar-thumb {
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-  }
+  } */
 `;
 
 export const SidebarMenu = styled.ul`

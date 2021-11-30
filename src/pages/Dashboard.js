@@ -1,69 +1,120 @@
 import React from "react";
-import styled from "styled-components";
 import DashCard from "../components/DashCard";
-
-const PageTitle = styled.div`
-  position: relative;
-  padding-bottom: 3rem;
-  p {
-    font-size: 1.5rem;
-    color: #7d8592;
-  }
-  h1 {
-    font-size: 3rem;
-    color: #0a1629;
-    padding: 1rem 0;
-    font-weight: normal;
-  }
-`;
-
-const CardContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 10rem;
-  gap: 50px;
-
-  @media screen and (max-width: 415px) {
-    grid-template-columns: 200px;
-    grid-template-rows: repeat(4, 100px);
-  }
-`;
+import SmallTable from "../components/SmallTable/SmallTable";
+import {
+  CardContainer,
+  DashboardStyle,
+  PageTop,
+} from "../styles/dashboard.styles";
 
 const items = [
   {
-    img: "/assets/icons/em-a.svg",
-    label: "Total Students",
-    stats: "5,000",
+    img: "/icons/dollar.png",
+    label: "Total Revenue",
+    numbers: "$10,540",
+    percent: "22,4",
+    top: true,
   },
   {
-    img: "/assets/icons/teach-a.svg",
-    label: "Total Teachers",
-    stats: "100",
+    img: "/icons/basket.png",
+    label: "Orders",
+    numbers: "1,055",
+    percent: "15,34",
+    top: true,
   },
   {
-    img: "/assets/icons/event-a.svg",
-    label: "Total Events",
-    stats: "600",
+    img: "/icons/person.png",
+    label: "Active Sessions",
+    numbers: "48",
+    percent: "18,25",
+    top: false,
+  },
+  {
+    img: "/icons/person.png",
+    label: "Total Sessions",
+    numbers: "5,420",
+    percent: "10,24",
+    top: false,
   },
 ];
 
+const TableOne = {
+  columns: ["Name", "Date", "Amount", "Status"],
+  image: false,
+  items: [
+    {
+      name: "Jessica S",
+      date: "24.05.2020",
+      amount: "$124.97",
+      status: "Paid",
+    },
+    {
+      name: "Andrew S",
+      date: "23.05.2020",
+      amount: "$55.97",
+      status: "Pending",
+    },
+    {
+      name: "Kevin S",
+      date: "24.05.2020",
+      amount: "$89.90",
+      status: "Paid",
+    },
+  ],
+};
+
+const TableTwo = {
+  columns: ["Name", "Price", "Unit Sold"],
+  image: true,
+  items: [
+    {
+      image: "/smallprod.png",
+      name: "Jessica S",
+      price: "$124.97",
+      unit: "204",
+    },
+    {
+      image: "/smallprod.png",
+      name: "Andrew S",
+      price: "$55.97",
+      "unit sold": "155",
+    },
+    {
+      image: "/smallprod.png",
+      name: "Kevin S",
+      price: "$89.97",
+      "unit sold": "120",
+    },
+  ],
+};
+
 export default function Dashboard() {
   return (
-    <>
-      <PageTitle>
-        <p>Welcome back, Rahan</p>
+    <DashboardStyle>
+      <PageTop>
         <h1>Dashboard</h1>
-      </PageTitle>
+
+        <button className="btn-primary">
+          <img src="icons/clou.png" alt="icon" /> Manage
+        </button>
+      </PageTop>
       <CardContainer>
         {items.map((item, i) => (
           <DashCard
             key={i}
+            numbers={item.numbers}
             img={item.img}
             label={item.label}
-            stats={item.stats}
+            percent={item.percent}
+            top={item.top}
           />
         ))}
       </CardContainer>
-    </>
+
+      <div className="container">
+        <SmallTable table={TableOne} />
+        <SmallTable table={TableTwo} />
+      </div>
+    </DashboardStyle>
   );
 }

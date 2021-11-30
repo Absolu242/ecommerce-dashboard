@@ -7,7 +7,7 @@ export default function Topbar() {
       <div className="topbar__content">
         <div className="topbar__content--left">
           <img className="logo" src="assets/images/logo.png" alt="logo" />
-          <span className="name">University</span>
+          <span className="name">BoltKit</span>
         </div>
 
         {/* <div className="topbar__form">

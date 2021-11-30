@@ -1,36 +1,58 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
+import { colors } from "../styles/colors";
 
 const CardItem = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 1rem 1.8rem;
   background-color: #fff;
-  border-radius: 10px;
-`
+  box-shadow: 0px 1px 4px rgba(21, 34, 50, 0.08);
 
-const CardTop = styled.div`
-  display: flex;
-  align-items: center;
-`
+  .numbers {
+    font-size: 1.4rem;
+  }
 
-const CardStats = styled.h1`
-  position: relative;
-  top: 2rem;
-  font-size: 2.5rem;
-`
+  .label {
+    font-size: 1.2rem;
+    color: ${colors.text};
+    padding-top: 0.5rem;
+  }
 
-const CardLabel = styled.p`
-  color: #7d8592;
-  padding: 0 1.2rem;
-  font-size: 1.4rem;
-`
-export default function DashCard({ img, label, stats }) {
+  .percent {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    padding-top: 1rem;
+    color: ${(props) => (props.top ? colors.green : colors.danger)};
+
+    img {
+      width: 20px;
+    }
+  }
+
+  .icon {
+    background-color: #ecf2ff;
+    padding: 1rem;
+    border-radius: 50%;
+    width: 40px;
+  }
+`;
+
+export default function DashCard({ numbers, img, label, percent, top }) {
   return (
-    <CardItem>
-      <CardTop>
-        <img src={img} alt='cool' />
-        <CardLabel>{label}</CardLabel>
-      </CardTop>
-      <CardStats>{stats}</CardStats>
+    <CardItem top={top}>
+      <div className="stats">
+        <p className="numbers">{numbers}</p>
+        <p className="label">{label}</p>
+        <p className="percent">
+          {percent}%{" "}
+          <img src={`/icons/${top ? "upArrow.png" : "downArrow.png"}`} alt="" />
+        </p>
+      </div>
+      <img className="icon" src={img} alt="icon" />
     </CardItem>
-  )
+  );
 }
