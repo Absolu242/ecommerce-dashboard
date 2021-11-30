@@ -8,6 +8,12 @@ export const DashboardStyle = styled.div`
     gap: 20px;
     padding: 2rem 0;
   }
+  .chart {
+    max-width: 500px;
+    background-color: #fff;
+    padding: 2rem;
+    height: 300px;
+  }
 `;
 
 export const PageTop = styled.div`

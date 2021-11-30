@@ -1,4 +1,8 @@
 import React from "react";
+import { DemoColumn } from "../components/Charts/batton";
+import { DemoAreaMap } from "../components/Charts/Country";
+import { DemoDualAxes } from "../components/Charts/DualLine";
+import Page from "../components/Charts/Lines";
 import DashCard from "../components/DashCard";
 import SmallTable from "../components/SmallTable/SmallTable";
 import {
@@ -110,6 +114,15 @@ export default function Dashboard() {
           />
         ))}
       </CardContainer>
+
+      <div className="container">
+        <div className="chart">
+          <DemoAreaMap />
+        </div>
+        <div className="chart">
+          <DemoDualAxes />
+        </div>
+      </div>
 
       <div className="container">
         <SmallTable table={TableOne} />
