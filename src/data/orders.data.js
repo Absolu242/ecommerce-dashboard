@@ -44,3 +44,34 @@ export const ordersData = [
     payment_status: "paid",
   },
 ];
+
+// const columns = React.useMemo(
+//   () => [
+//     {
+//       Header: "Order",
+//       accessor: "order_id",
+//     },
+//     {
+//       Header: "Date",
+//       accessor: "date",
+//     },
+
+//     {
+//       Header: "Customer",
+//       accessor: "customer",
+//     },
+//     {
+//       Header: "Payement Status",
+//       accessor: "payment_status",
+//     },
+//     {
+//       Header: "Order Status",
+//       accessor: "order_status",
+//     },
+//     {
+//       Header: "Total",
+//       accessor: "price",
+//     },
+//   ],
+//   []
+// );
