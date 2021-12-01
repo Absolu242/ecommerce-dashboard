@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
 import { AreaMap } from "@ant-design/charts";
 
 export const DemoAreaMap = () => {

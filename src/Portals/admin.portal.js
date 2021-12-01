@@ -5,6 +5,7 @@ import addCustomer from "../pages/Customers/addCustomer";
 import CustomerInfo from "../pages/Customers/CustomerInfo";
 import CustomersList from "../pages/Customers/CustomersList";
 import OrdersList from "../pages/Orders/OrdersList";
+import ProductsList from "../pages/Products/ProductsList";
 
 function AdminPortal() {
   return (
@@ -14,6 +15,7 @@ function AdminPortal() {
       <Route path="/customers/:id" component={CustomerInfo} />
       <Route path="/customers" component={CustomersList} />
       <Route path="/orders" component={OrdersList} />
+      <Route path="/products" component={ProductsList} />
     </Switch>
   );
 }

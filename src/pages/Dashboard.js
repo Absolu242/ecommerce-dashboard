@@ -1,8 +1,6 @@
 import React from "react";
-import { DemoColumn } from "../components/Charts/batton";
 import { DemoAreaMap } from "../components/Charts/Country";
 import { DemoDualAxes } from "../components/Charts/DualLine";
-import Page from "../components/Charts/Lines";
 import DashCard from "../components/DashCard";
 import SmallTable from "../components/SmallTable/SmallTable";
 import {

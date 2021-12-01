@@ -3,8 +3,6 @@ import styled from "styled-components";
 import { useTable, usePagination, useRowSelect } from "react-table";
 import { colors } from "../../styles/colors";
 
-import makeData from "./makeData";
-
 const Styles = styled.div`
   padding: 1rem;
 
@@ -165,7 +163,6 @@ function Table({ columns, data }) {
     getTableBodyProps,
     headerGroups,
     prepareRow,
-    selectedFlatRows,
     page, // Instead of using 'rows', we'll use page,
     // which has only the rows for the active page
 
@@ -173,12 +170,11 @@ function Table({ columns, data }) {
     canPreviousPage,
     canNextPage,
     pageOptions,
-    pageCount,
     gotoPage,
     nextPage,
     previousPage,
     setPageSize,
-    state: { pageIndex, pageSize, selectedRowIds },
+    state: { pageIndex, pageSize },
   } = useTable(
     {
       columns,
@@ -294,63 +290,7 @@ function Table({ columns, data }) {
   );
 }
 
-function Reacttable() {
-  const columns = React.useMemo(
-    () => [
-      {
-        Header: "Order",
-        accessor: "order",
-      },
-      {
-        Header: "Date",
-        accessor: "date",
-      },
-
-      {
-        Header: "Customer",
-        accessor: "customer",
-      },
-      {
-        Header: "Payement Status",
-        accessor: "payementstatus",
-        Cell: ({ cell: { value } }) => (
-          <td>
-            <span className={value === "paid" ? "colored" : "uncolored"}>
-              {value}
-            </span>
-          </td>
-        ),
-      },
-      {
-        Header: "Order Status",
-        accessor: "status",
-        Cell: ({ cell: { value } }) => (
-          <td>
-            <span
-              className={
-                value === "ready"
-                  ? "orange"
-                  : value === "shipped"
-                  ? "gray"
-                  : "blue"
-              }
-            >
-              {value}
-            </span>
-          </td>
-        ),
-      },
-      {
-        Header: "Total",
-        accessor: "progress",
-        Cell: ({ cell: { value } }) => <td>${value}</td>,
-      },
-    ],
-    []
-  );
-
-  const data = React.useMemo(() => makeData(1000), []);
-
+function Reacttable({ columns, data }) {
   return (
     <Styles>
       <Table columns={columns} data={data} />

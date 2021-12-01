@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Heading from "../../components/Heading";
 import Reacttable from "../../components/React-table/Reacttable";
-import orderData from "../../data/orderData";
+import productData from "../../data/productData";
 
 const Container = styled.div`
   width: 100%;
@@ -20,66 +20,54 @@ const Container = styled.div`
   }
 `;
 
-export default function OrdersList() {
+export default function ProductsList() {
   const columns = React.useMemo(
     () => [
       {
-        Header: "Order",
-        accessor: "order",
+        Header: "Product",
+        accessor: "product",
+        Cell: ({ cell: { value } }) => (
+          <td className="img">
+            <img src={`/images/smallProd.png`} alt="" /> {value}
+          </td>
+        ),
       },
       {
-        Header: "Date",
-        accessor: "date",
+        Header: "Inventory",
+        accessor: "inventory",
+        Cell: ({ cell: { value } }) => (
+          <td>
+            {value === "Out of Stock" ? (
+              <span className="uncolored">{value}</span>
+            ) : (
+              value
+            )}
+          </td>
+        ),
       },
 
       {
-        Header: "Customer",
-        accessor: "customer",
-      },
-      {
-        Header: "Payement Status",
-        accessor: "payementstatus",
-        Cell: ({ cell: { value } }) => (
-          <td>
-            <span className={value === "paid" ? "colored" : "uncolored"}>
-              {value}
-            </span>
-          </td>
-        ),
-      },
-      {
-        Header: "Order Status",
-        accessor: "status",
-        Cell: ({ cell: { value } }) => (
-          <td>
-            <span
-              className={
-                value === "ready"
-                  ? "orange"
-                  : value === "shipped"
-                  ? "gray"
-                  : "blue"
-              }
-            >
-              {value}
-            </span>
-          </td>
-        ),
+        Header: "Color",
+        accessor: "color",
       },
       {
         Header: "Total",
         accessor: "progress",
         Cell: ({ cell: { value } }) => <td>${value}</td>,
       },
+      {
+        Header: "Rating",
+        accessor: "rating",
+      },
     ],
     []
   );
 
-  const data = React.useMemo(() => orderData(1000), []);
+  const data = React.useMemo(() => productData(1000), []);
 
   return (
     <Container>
-      <Heading title="Orders" primary="Order" link={true} />
+      <Heading title="Products" primary="Product" link={true} />
 
       <div className="wrapper">
         <Reacttable columns={columns} data={data} />
