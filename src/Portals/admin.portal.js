@@ -6,6 +6,7 @@ import CustomerInfo from "../pages/Customers/CustomerInfo";
 import CustomersList from "../pages/Customers/CustomersList";
 import OrdersList from "../pages/Orders/OrdersList";
 import ProductsList from "../pages/Products/ProductsList";
+import CategoriesList from "../pages/Categories/CategoriesList";
 
 function AdminPortal() {
   return (
@@ -16,6 +17,7 @@ function AdminPortal() {
       <Route path="/customers" component={CustomersList} />
       <Route path="/orders" component={OrdersList} />
       <Route path="/products" component={ProductsList} />
+      <Route path="/categories" component={CategoriesList} />
     </Switch>
   );
 }
