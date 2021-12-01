@@ -46,6 +46,21 @@ const Styles = styled.div`
             width: 35px;
             padding-right: 0.5rem;
           }
+
+          .char {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #d7dbec;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            font-size: 1.7rem;
+            margin-right: 1rem;
+            text-transform: uppercase;
+            color: #fff;
+          }
         }
         span {
           padding: 0.5rem 1rem;
