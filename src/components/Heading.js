@@ -68,7 +68,7 @@ export default function Heading({ primary, secondary, link, title, back }) {
         <div>
           {back && (
             <button className="back" onClick={() => goBack()}>
-              <img src="assets/icons/back.svg" alt="icon" /> Back
+              <img src="/icons/back.svg" alt="icon" /> Back
             </button>
           )}
           <div className="heading">{title}</div>
@@ -79,7 +79,7 @@ export default function Heading({ primary, secondary, link, title, back }) {
             <Link to={`/${url.toLowerCase()}`}>
               <button className="btn-primary">
                 {" "}
-                <img src="/assets/icons/plus.svg" alt="icon" /> Add {primary}
+                <img src="/icons/plus.svg" alt="icon" /> Add {primary}
               </button>
             </Link>
           ) : (

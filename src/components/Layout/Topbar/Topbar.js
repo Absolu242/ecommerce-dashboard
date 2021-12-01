@@ -1,12 +1,26 @@
 import React from "react";
+import { useState } from "react";
 import { TopbarContainer } from "./Topbar.styles";
 
-export default function Topbar() {
+export default function Topbar({ setIsClicked }) {
+  const [clicked, setClicked] = useState(false);
+
+  const onClickHandler = () => {
+    setClicked((clicked) => !clicked);
+    setIsClicked(clicked);
+  };
   return (
     <TopbarContainer className="topbar">
       <div className="topbar__content">
         <div className="topbar__content--left">
-          <img className="logo" src="assets/images/logo.png" alt="logo" />
+          <button className="menu" onClick={() => onClickHandler()}>
+            {clicked ? (
+              <i className="fas fa-times"></i>
+            ) : (
+              <i className="fas fa-bars"></i>
+            )}
+          </button>
+          <img className="logo" src="/icons/logo.png" alt="logo" />
           <span className="name">BoltKit</span>
         </div>
 
@@ -23,13 +37,13 @@ export default function Topbar() {
         <div className="topbar__content--right">
           <span className="topbar-icon">
             <button>
-              <img src="assets/icons/message.svg" alt="message icon" />
+              <img src="/icons/message.svg" alt="message icon" />
             </button>
           </span>
 
           <span className="topbar-icon">
             <button>
-              <img src="assets/icons/bell.svg" alt="message icon" />
+              <img src="/icons/bell.svg" alt="message icon" />
               <span className="indice">1</span>
             </button>
           </span>
@@ -38,7 +52,7 @@ export default function Topbar() {
             <button className="user">
               <img
                 className="user-avatar"
-                src="assets/images/Avatar.png"
+                src="images/Avatar.png"
                 alt="add freind button"
               />
               <p className="user-name">Rahan Bouess</p>

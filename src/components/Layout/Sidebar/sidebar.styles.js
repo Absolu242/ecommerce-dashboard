@@ -13,6 +13,8 @@ export const SidebarContainer = styled.div`
   padding: 4rem 2rem 5rem 2rem;
   overflow-y: auto;
   scrollbar-width: thin;
+  background-color: #f5f6fa;
+  z-index: 9999;
 
   .label {
     font-size: 1.2rem;
@@ -32,6 +34,11 @@ export const SidebarContainer = styled.div`
   &::-webkit-scrollbar-thumb {
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
   } */
+
+  @media (max-width: 1024px) {
+    transform: ${(props) =>
+      props.click === true ? "translateX(-100%)" : " translateX(0%)"};
+  }
 `;
 
 export const SidebarMenu = styled.ul`

@@ -6,33 +6,33 @@ export const adminRoutes = [
   },
   {
     name: "Orders",
-    icon: "fas fa-building",
+    icon: "fas fa-dollar-sign",
     link: "/orders",
   },
   {
     name: "Products",
-    icon: "fas fa-book",
+    icon: "fas fa-box",
     link: "/products",
   },
   {
     name: "Categories",
-    icon: "fas fa-graduation-cap",
+    icon: "fas fa-clipboard-list",
     link: "/categories",
   },
 
   {
     name: "Customers",
-    icon: "fas fa-calendar-alt",
+    icon: "fas fa-users",
     link: "/customers",
   },
   {
     name: "Reports",
-    icon: "fas fa-calendar",
+    icon: "fas fa-chart-area",
     link: "/reports",
   },
   {
     name: "Coupons",
-    icon: "fas fa-chalkboard-teacher",
+    icon: "fas fa-cart-arrow-down",
     link: "/coupons",
   },
 

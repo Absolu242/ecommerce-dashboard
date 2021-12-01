@@ -4,11 +4,12 @@ import { adminRoutes } from "../../../routes/admin.routes";
 
 import { SidebarContainer, SidebarItem, SidebarMenu } from "./sidebar.styles";
 
-export default function Sidebar({ location, role }) {
+export default function Sidebar({ location, role, isClicked }) {
   let routes = adminRoutes;
 
+  console.log(isClicked);
   return (
-    <SidebarContainer>
+    <SidebarContainer click={isClicked}>
       <SidebarMenu>
         {routes.map((item, i) => (
           <Link to={item.link} key={i}>

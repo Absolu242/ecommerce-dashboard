@@ -66,11 +66,7 @@ export default function CustomerInfo({ match }) {
             <div className="student-info">
               <div className="student-top">
                 <span>
-                  <img
-                    className="img"
-                    src="/assets/images/Avatar.png"
-                    alt="student"
-                  />
+                  <img className="img" src="/images/Avatar.png" alt="student" />
                 </span>
                 <span>
                   <p className="name">{student.name}</p>

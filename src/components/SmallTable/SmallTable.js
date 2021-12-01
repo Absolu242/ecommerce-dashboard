@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Fragment } from "react";
 import styled from "styled-components";
 import { colors } from "../../styles/colors";
 
 const SmallTableContainer = styled.div`
-  max-width: 520px;
+  // max-width: 520px;
   width: 100%;
   border-radius: 4px;
   background: #ffffff;
@@ -37,6 +37,10 @@ const SmallTableContainer = styled.div`
         height: 1px;
         background-color: #d7dbec;
         // margin: 1rem 0;
+
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
       }
       tr {
         color: ${colors.general};
@@ -81,46 +85,47 @@ export default function SmallTable({ table }) {
     return Object.values(item);
   });
 
-  console.log(ItemValues);
   return (
     <SmallTableContainer>
       <p className="about">Recent Transactions</p>
 
       <table className="table">
         <thead>
-          {columns.map((item, i) => (
-            <th key={i}>{item}</th>
-          ))}
+          <tr>
+            {columns.map((item, i) => (
+              <th key={i}>{item}</th>
+            ))}
+          </tr>
         </thead>
         <tbody>
           {image ? (
             <>
               {ItemValues.map((values, i) => (
-                <>
+                <Fragment key={i}>
                   <div className="separator"></div>
                   <tr>
                     <td className="img">
                       <img src={`/images/${values[0]}`} alt="" /> Jessica S
                     </td>
                     {values.slice(2, values.length).map((value, i) => (
-                      <>
+                      <Fragment key={i}>
                         <td>{value}</td>
-                      </>
+                      </Fragment>
                     ))}
                   </tr>
-                </>
+                </Fragment>
               ))}
             </>
           ) : (
             <>
-              {ItemValues.map((values) => (
-                <>
+              {ItemValues.map((values, i) => (
+                <Fragment key={i}>
                   <div className="separator"></div>
                   <tr>
                     {values.slice(0, 3).map((value, i) => (
-                      <>
+                      <Fragment key={i}>
                         <td>{value}</td>
-                      </>
+                      </Fragment>
                     ))}
                     <td>
                       <span
@@ -134,7 +139,7 @@ export default function SmallTable({ table }) {
                       </span>
                     </td>
                   </tr>
-                </>
+                </Fragment>
               ))}
             </>
           )}

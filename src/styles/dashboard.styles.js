@@ -9,10 +9,15 @@ export const DashboardStyle = styled.div`
     padding: 2rem 0;
   }
   .chart {
-    max-width: 500px;
     background-color: #fff;
     padding: 2rem;
     height: 300px;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr;
+    }
   }
 `;
 
@@ -56,8 +61,11 @@ export const CardContainer = styled.div`
   grid-template-rows: 10rem;
   gap: 50px;
 
-  @media screen and (max-width: 415px) {
-    grid-template-columns: 200px;
-    grid-template-rows: repeat(4, 100px);
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (max-width: 765px) {
+    grid-template-columns: 1fr;
   }
 `;

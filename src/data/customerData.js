@@ -15,10 +15,7 @@ const range = (len) => {
 // }
 // let date = randomDate(new Date(2021, 5, 1), new Date());
 
-let colors = ["red", "green", "blue", "orange", "yellow"];
-
 const newPerson = () => {
-  const statusChance = Math.random();
   return {
     product: namor.generate({ words: 1 }),
     location: namor.generate({ words: 1 }),

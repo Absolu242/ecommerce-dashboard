@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-  <desc>Created with Lunacy</desc>
-  <g id="00-General-/-01-Icons-/-01-Actions-/-01-Add-rounded">
-    <path d="M0 0L24 0L24 24L0 24L0 0Z" id="BG" fill="none" stroke="none" />
-    <path d="M2 0L2 2L0 2L0 0L2 0ZM16 1C16 0.447715 15.5523 0 15 0L5 0C4.44772 0 4 0.447715 4 1C4 1.55228 4.44772 2 5 2L15 2C15.5523 2 16 1.55228 16 1ZM2 4L2 6L0 6L0 4L2 4ZM16 5C16 4.44772 15.5523 4 15 4L5 4C4.44772 4 4 4.44772 4 5C4 5.55228 4.44772 6 5 6L15 6C15.5523 6 16 5.55228 16 5ZM2 10L2 8L0 8L0 10L2 10ZM16 9C16 8.44771 15.5523 8 15 8L5 8C4.44772 8 4 8.44771 4 9C4 9.55228 4.44772 10 5 10L15 10C15.5523 10 16 9.55228 16 9Z" transform="translate(4 7)" id="color" fill="#7E84A3" fill-rule="evenodd" stroke="none" />
-  </g>
-</svg>

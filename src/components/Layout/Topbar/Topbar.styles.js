@@ -25,6 +25,15 @@ export const TopbarContainer = styled.div`
         justify-content: space-between;
         align-items: center;
 
+        .menu {
+          display: none;
+          outline: none;
+          i {
+            font-size: 2rem;
+            color: ${colors.text};
+          }
+        }
+
         .logo {
           padding: 0 1.5rem;
           width: 6.5rem;
@@ -33,6 +42,12 @@ export const TopbarContainer = styled.div`
         .name {
           font-size: 2rem;
           font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+          .menu {
+            display: block;
+          }
         }
       }
 
@@ -56,6 +71,10 @@ export const TopbarContainer = styled.div`
                 display: block;
                 margin: 0 1rem;
                 color: ${colors.text};
+
+                @media (max-width: 768px) {
+                  display: none;
+                }
               }
             }
             .indice {

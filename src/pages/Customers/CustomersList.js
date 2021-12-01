@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Heading from "../../components/Heading";
 import Reacttable from "../../components/React-table/Reacttable";
 import customerData from "../../data/customerData";
-import productData from "../../data/productData";
 
 const Container = styled.div`
   width: 100%;
